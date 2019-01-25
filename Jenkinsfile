@@ -31,6 +31,7 @@ pipeline {
                     stage("Test-Client") {
                         agent any
                         steps{
+                            cd 'cd %cd%/client'
                             echo "This is branch client"
                             bat '%cd%/client/jenkins/scripts/test.bat'
                         }
