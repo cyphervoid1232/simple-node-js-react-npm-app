@@ -17,6 +17,14 @@ pipeline {
             bat '%cd%/server/jenkins/scripts/build.bat'
           }
         }
+        stage('test') {
+          steps {
+            dir(path: 'client') {
+              bat 'npm install'
+            }
+
+          }
+        }
       }
     }
     stage('Test') {
